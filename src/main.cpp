@@ -1,18 +1,25 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+static unsigned long SensorTimer=0;   //check all sensors and updates algorythm every 15-20 min ish 
+static unsigned long WateringTimer=0; // for running pumps at calculated frequency (also check water levl during this operation time)
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+unsigned long WateringFreq=3600000//for now static set but late this val will be set by optimisation algorythm 
+
+void setup(){
+  Serial.begin(115200);
+  SensorTimer=millis();
+  WateringTimer=millis()
+
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+void loop(){
+  if(millis()-SensorTimer>900000){ //check sensors every 15 min 
+    
+    SensorTimer=millis();
+  }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  if(millis()-WateringTimer>WateringFreq){
+
+    WateringTimer=millis()
+  }
 }

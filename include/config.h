@@ -4,7 +4,11 @@
 #include <Arduino.h>
 
 //PIN LAYOUT
-const uint8_t SOIL_PIN_1=34;
+const uint8_t SOIL_PIN_1=36;
+const uint8_t SOIL_PIN_2=39;
+const uint8_t SOIL_PIN_3=34;
+const uint8_t SOIL_PIN_4=35;
+const uint8_t WLevel_PIN=16;
 
 struct PlantProfile{
     const char* name;                   //plant name

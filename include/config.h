@@ -3,6 +3,9 @@
 
 #include <Arduino.h>
 
+//PIN LAYOUT
+const uint8_t SOIL_PIN_1=34;
+
 struct PlantProfile{
     const char* name;                   //plant name
     uint8_t ID;                         //pump station number
@@ -13,7 +16,6 @@ struct PlantProfile{
     float IdealTemp;                    //ideal temperature of plant 
     float IdealLight;                   //ideal lighting of plant how much light per day
 };
-
 
 // Preset Plant Profiles
 
